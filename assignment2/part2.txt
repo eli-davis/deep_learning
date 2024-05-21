@@ -1,0 +1,24 @@
+# b"H
+
+Expanding from "one layer to two layer"
+
+Currently: (1 layer)
+vector of 256 (input top layer 1) ... vectors can represent real-world values ...here each of the values in the vector is a pixel (think of vector as an array)
+vector of 10 (output of layer 1) ...  each of the vector values 0-9 represents probability scores corresponding to predictions of digits 0-9
+We have a weight matrix 256x10 where each of the 10 outputs is a weighted sum of 256 inputs x 256 weights_i (for i is 0-9)
+The weights are essentially valuing which pixels correspond to each digits
+As there's a one to one correspondence between each pixel and each weight
+So output0 = input_pixel0 * weight[0,0] +input_pixel1 * weight[0,1] +.... Input_pixel255​*weeight[0, 255]
+So output1 = input_pixel0 * weight[1,0] +input_pixel1 * weight[1,1] +.... Input_pixel255​*weeight[1, 255]
+
+
+In 2 layer network
+256 vector input (pixels)
+256x512 weights_layer1 (each of the 512 layer1 outputs is a weighted sum of weightsi(256 length vector dot pixels (256 length vector)
+512 values "neorons" – outputs of lyaer 1
+(here have to add a nonlinearity such as RELU to each of the 512 layer1 outputs: todo nonlinearity is important why?
+512x10 weights (same as 1 layer net, except now instead of going from pixels to predictions, we're going from layer1 outputs to predictions)
+
+For next time
+Try to code and derive the losses using cross entropy loss
+Answer will be provided next time
